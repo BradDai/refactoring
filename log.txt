@@ -1,3 +1,5 @@
+f9766a0 Task 2.1: extract getAmount and getPlay
+2f61026 Task 1.2 update log.txt
 373c1db Task 1.2 update log.txt
 2b4f164 fixed tests for the not-for-credit tasks; parameter ordering and ensuring consistent line endings.
 ff5004e adding shortcut keys for Inline Variable (Re: Piazza question)
