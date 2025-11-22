@@ -1,3 +1,4 @@
+85f6802 Task 4.2: update log
 c2f6f9a Task 4.2: move amount and volumeCredits calculations to calculators
 b0f9afe Task 3.2: update log
 2f3b679 Task 3.2: add HTMLStatementPrinter
