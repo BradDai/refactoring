@@ -1,3 +1,4 @@
+9135375 Task 2.1: update log
 f9766a0 Task 2.1: extract getAmount and getPlay
 2f61026 Task 1.2 update log.txt
 373c1db Task 1.2 update log.txt
