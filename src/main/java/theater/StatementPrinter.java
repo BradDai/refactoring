@@ -100,4 +100,38 @@ public class StatementPrinter {
         }
         return result;
     }
+
+    /**
+     * Format an amount (in cents) as US currency.
+     * @param amount int
+     * @return format
+     */
+    protected String usd(int amount) {
+        final NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
+        return format.format(amount / (double) Constants.PERCENT_FACTOR);
+    }
+
+    /**
+     * Calculate total amount for the invoice.
+     * @return total
+     */
+    protected int getTotalAmount() {
+        int total = 0;
+        for (Performance p : invoice.getPerformances()) {
+            total += getAmount(p);
+        }
+        return total;
+    }
+
+    /**
+     * Calculate total volume credits for the invoice.
+     * @return credits
+     */
+    protected int getTotalVolumeCredits() {
+        int credits = 0;
+        for (Performance p : invoice.getPerformances()) {
+            credits += getVolumeCredits(p);
+        }
+        return credits;
+    }
 }

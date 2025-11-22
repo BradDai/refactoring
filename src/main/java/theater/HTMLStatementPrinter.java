@@ -1,7 +1,5 @@
 package theater;
 
-import java.text.NumberFormat;
-import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -54,15 +52,5 @@ public class HTMLStatementPrinter extends StatementPrinter {
                 "<p>You earned <em>%d</em> credits</p>%n", volumeCredits));
 
         return result.toString();
-    }
-
-    /**
-     * Format an amount (in cents) as US currency.
-     * @param amount amount in cents
-     * @return formatted US currency string
-     */
-    private String usd(int amount) {
-        final NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
-        return format.format(amount / (double) Constants.PERCENT_FACTOR);
     }
 }
