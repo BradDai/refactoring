@@ -16,6 +16,10 @@ public class StatementPrinter {
         this.plays = plays;
     }
 
+    protected Invoice getInvoice() {
+        return invoice;
+    }
+
     /**
      * Returns a formatted statement of the invoice associated with this printer.
      * @return the formatted statement
@@ -55,7 +59,7 @@ public class StatementPrinter {
         return result.toString();
     }
 
-    private int getVolumeCredits(Performance performance) {
+    protected int getVolumeCredits(Performance performance) {
         int result = 0;
         result += Math.max(performance.getAudience() - Constants.BASE_VOLUME_CREDIT_THRESHOLD, 0);
         if ("comedy".equals(getPlay(performance).getType())) {
@@ -64,11 +68,11 @@ public class StatementPrinter {
         return result;
     }
 
-    private Play getPlay(Performance performance) {
+    protected Play getPlay(Performance performance) {
         return plays.get(performance.getPlayID());
     }
 
-    private int getAmount(Performance performance) {
+    protected int getAmount(Performance performance) {
         int result = 0;
         switch (getPlay(performance).getType()) {
             case "tragedy":
