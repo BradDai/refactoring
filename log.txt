@@ -1,3 +1,5 @@
+4ead911 Task 3.1: clean up formatting and finalize StatementData/StatementPrinter
+71c9702 Task 2.2: update log
 d90b328 Task 2.2: extract getVolumeCredits
 62124f4 Task 2.1: update log
 9135375 Task 2.1: update log
