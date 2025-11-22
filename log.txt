@@ -1,3 +1,5 @@
+2f3b679 Task 3.2: add HTMLStatementPrinter
+29f64a7 Task 3.1: update log
 4ead911 Task 3.1: clean up formatting and finalize StatementData/StatementPrinter
 71c9702 Task 2.2: update log
 d90b328 Task 2.2: extract getVolumeCredits
