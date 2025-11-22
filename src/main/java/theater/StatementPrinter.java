@@ -22,17 +22,25 @@ public class StatementPrinter {
      * @throws RuntimeException if one of the play types is not known
      */
     public String statement() {
+        final StatementData data = new StatementData(invoice);
+        return renderPlainText(data);
+    }
+
+    private String renderPlainText(StatementData data) {
         int totalAmount = 0;
         int volumeCredits = 0;
+
         final StringBuilder result =
-                new StringBuilder("Statement for " + invoice.getCustomer() + System.lineSeparator());
+                new StringBuilder("Statement for "
+                        + data.getCustomer() + System.lineSeparator());
 
         final NumberFormat frmt = NumberFormat.getCurrencyInstance(Locale.US);
 
-        for (Performance p : invoice.getPerformances()) {
+        for (Performance p : data.getPerformances()) {
 
             // add volume credits
             volumeCredits += getVolumeCredits(p);
+
             // print line for this order
             result.append(String.format("  %s: %s (%s seats)%n",
                     getPlay(p).getName(),
