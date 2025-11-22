@@ -42,15 +42,19 @@ public class StatementPrinter {
 
         for (Performance p : data.getPerformances()) {
 
-            // add volume credits
-            volumeCredits += getVolumeCredits(p);
+            final AbstractPerformanceCalculator calculator =
+                    AbstractPerformanceCalculator.createPerformanceCalculator(p, getPlay(p));
 
-            // print line for this order
+            final int thisAmount = calculator.getAmount();
+
+            volumeCredits += calculator.getVolumeCredits();
+
             result.append(String.format("  %s: %s (%s seats)%n",
-                    getPlay(p).getName(),
-                    frmt.format(getAmount(p) / Constants.PERCENT_FACTOR),
+                    calculator.getPlay().getName(),
+                    frmt.format(thisAmount / Constants.PERCENT_FACTOR),
                     p.getAudience()));
-            totalAmount += getAmount(p);
+
+            totalAmount += thisAmount;
         }
 
         result.append(String.format("Amount owed is %s%n",

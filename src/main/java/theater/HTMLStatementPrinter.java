@@ -30,12 +30,15 @@ public class HTMLStatementPrinter extends StatementPrinter {
 
         // table rows
         for (Performance p : data.getPerformances()) {
-            final int thisAmount = getAmount(p);
-            volumeCredits += getVolumeCredits(p);
+            final AbstractPerformanceCalculator calculator =
+                    AbstractPerformanceCalculator.createPerformanceCalculator(p, getPlay(p));
+
+            final int thisAmount = calculator.getAmount();
+            volumeCredits += calculator.getVolumeCredits();
 
             result.append(String.format(
                     " <tr><td>%s</td><td>%d</td><td>%s</td></tr>%n",
-                    getPlay(p).getName(),
+                    calculator.getPlay().getName(),
                     p.getAudience(),
                     usd(thisAmount)));
 
