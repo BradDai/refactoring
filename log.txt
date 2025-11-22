@@ -1,6 +1,6 @@
 0000000 Task 1.1: initial Checkstyle cleanup
-0000000 Task 2.3: refactor statement to use getAmount helper
-0000000 Task 2.4: refactor statement to use getVolumeCredits helper
+0000001 Task 2.3: refactor statement to use getAmount helper
+0000002fit  Task 2.4: refactor statement to use getVolumeCredits helper
 7a2edb4 Update log.txt for tasks 1.1, 2.3, 2.4
 85f6802 Task 4.2: update log
 c2f6f9a Task 4.2: move amount and volumeCredits calculations to calculators
