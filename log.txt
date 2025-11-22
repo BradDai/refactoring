@@ -1,3 +1,5 @@
+c2f6f9a Task 4.2: move amount and volumeCredits calculations to calculators
+b0f9afe Task 3.2: update log
 2f3b679 Task 3.2: add HTMLStatementPrinter
 29f64a7 Task 3.1: update log
 4ead911 Task 3.1: clean up formatting and finalize StatementData/StatementPrinter
